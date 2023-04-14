@@ -20,10 +20,12 @@ const router = createBrowserRouter([
   },
 ]);
 
-const App = () => (
-  <Provider store={store}>
-    <RouterProvider router={router} />
-  </Provider>
-);
+function App() {
+  return (
+    <Provider store={store}>
+      <RouterProvider router={router} />
+    </Provider>
+  );
+}
 
 export default App;

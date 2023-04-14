@@ -3,25 +3,27 @@ import { Link } from 'react-router-dom';
 import ListItem from './ListItem';
 import './List.css';
 
-const List = ({
+function List({
   coins, arrowIcon,
-}) => (
-  <ul className="grid">
-    {coins.map(({
-      id, icon, name, priceInUSD,
-    }) => (
-      <Link to={`/coins/${id}`} key={id}>
-        <ListItem
-          key={id}
-          arrowIcon={arrowIcon}
-          logo={icon}
-          coinName={name}
-          coinStat={priceInUSD}
-        />
-      </Link>
-    ))}
-  </ul>
-);
+}) {
+  return (
+    <ul className="grid">
+      {coins.map(({
+        id, icon, name, priceInUSD,
+      }) => (
+        <Link to={`/coins/${id}`} key={id}>
+          <ListItem
+            key={id}
+            arrowIcon={arrowIcon}
+            logo={icon}
+            coinName={name}
+            coinStat={priceInUSD}
+          />
+        </Link>
+      ))}
+    </ul>
+  );
+}
 
 List.propTypes = {
   coins: PropTypes.arrayOf(PropTypes.shape({

@@ -9,7 +9,7 @@ import Header from '../header/Header';
 import Banner from '../banner/Banner';
 import './Details.css';
 
-const Details = () => {
+function Details() {
   const dispatch = useDispatch();
   const { id } = useParams();
   const { selected } = useSelector((state) => state);
@@ -83,6 +83,6 @@ const Details = () => {
       ))}
     </section>
   );
-};
+}
 
 export default Details;

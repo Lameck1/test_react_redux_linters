@@ -9,7 +9,7 @@ import Header from '../header/Header';
 import Banner from '../banner/Banner';
 import './Home.css';
 
-const Home = () => {
+function Home() {
   const dispatch = useDispatch();
   const { coins } = useSelector((state) => state);
 
@@ -22,14 +22,14 @@ const Home = () => {
 
   useEffect(() => {
     dispatch(getCoins());
-  }, []);
+  }, [dispatch]);
 
   useEffect(() => {
     const results = coins.filter(
       (coin) => coin.name.toLowerCase().includes(searchTerm.toLowerCase()),
     );
     setSearchResults(results);
-  }, [searchTerm]);
+  }, [coins, searchTerm]);
 
   const today = new Date();
   const [day, month, year] = [today.getDate(), today.getMonth(), today.getFullYear()];
@@ -66,6 +66,6 @@ const Home = () => {
       />
     </section>
   );
-};
+}
 
 export default Home;
