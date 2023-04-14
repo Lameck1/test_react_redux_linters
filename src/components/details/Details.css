@@ -33,5 +33,5 @@
 }
 
 .stat:nth-child(even) {
-  background-color: rgba(0, 0, 0, 0.09);
+  background-color: #00000017;
 }
